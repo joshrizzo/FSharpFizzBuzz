@@ -1,7 +1,7 @@
 module FizzBuzz
 
 let private getOutput i rules : string = 
-  let matches = List.map (fun rule -> rule i)
+  let matches = Seq.map (fun rule -> rule i) rules
   let output = String.concat "" matches
   $"{(string i)} {output}"
 

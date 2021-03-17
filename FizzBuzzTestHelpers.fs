@@ -1,7 +1,7 @@
 module FizzBuzzTestHelpers
 
 let private indexIsMultipleOf step items item = 
-  Seq.findIndex ((=) item) items + 1 % step = 0
+  ((Seq.findIndex ((=) item) items) + 1) % step = 0
 
 let private getMultiplesOf step items = 
   Seq.filter (indexIsMultipleOf step items) items
