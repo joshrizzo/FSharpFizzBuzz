@@ -6,7 +6,7 @@ let runAll =
   let listSize = 100
   let defaultRun = FizzBuzz.run listSize FizzBuzzDefaultRules.rules
 
-  let errors = Seq.filter (fun x -> not (isNull x)) [
+  let errors = Seq.filter (isNull >> not) [
     FizzBuzzTests.runShouldShowAllEntries listSize defaultRun
     FizzBuzzTests.runShouldStartWithNumbers defaultRun
     FizzBuzzTests.multiplesOfThreeShouldPrintFizz defaultRun
